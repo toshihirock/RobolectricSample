@@ -1,4 +1,4 @@
-# Robolectricサンプル
+# RobolectricSampleProject
 
 ## Run test
 
