@@ -27,7 +27,7 @@ public class SubActivityTest {
 
         Activity activity = Robolectric.buildActivity(SubActivity.class).withIntent(intent).create().get();
 
-        TextView text = (TextView) activity.findViewById(R.id.intent);
+        TextView text = (TextView) activity.findViewById(R.id.textview);
         String actual = text.getText().toString();
         assertThat(actual, is("FromDeckardActivity"));
     }
@@ -36,7 +36,7 @@ public class SubActivityTest {
     public void messageというIntentが設定されていない場合にTextViewに設定されていない旨が表示されること() throws Exception {
         Activity activity = Robolectric.buildActivity(SubActivity.class).create().visible().get();
 
-        TextView text = (TextView) activity.findViewById(R.id.intent);
+        TextView text = (TextView) activity.findViewById(R.id.textview);
         String actual = text.getText().toString();
         assertThat(actual, is("not found message extra"));
     }
@@ -45,7 +45,7 @@ public class SubActivityTest {
     public void onPauseメソッドが呼ばれたタイミングでTextViewが変更できていること() throws Exception {
         Activity activity = Robolectric.buildActivity(SubActivity.class).create().start().resume().pause().get();
 
-        TextView text = (TextView) activity.findViewById(R.id.intent);
+        TextView text = (TextView) activity.findViewById(R.id.textview);
         String actual = text.getText().toString();
         assertThat(actual, is("onPause"));
     }

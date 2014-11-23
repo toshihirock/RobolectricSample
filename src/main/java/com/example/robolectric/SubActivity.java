@@ -14,7 +14,7 @@ public class SubActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub);
-        text = (TextView) this.findViewById(R.id.intent);
+        text = (TextView) this.findViewById(R.id.textview);
 
         Intent intent = getIntent();
 
